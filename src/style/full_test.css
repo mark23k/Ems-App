@@ -1,0 +1,181 @@
+/*
+ * PROFESSIONAL & RESPONSIVE CSS
+ * File: full_test.css
+ */
+
+/* === 1. CSS Variables and Base Styles === */
+:root {
+    --color-primary: #004c7a;       /* Dark Navy Blue */
+    --color-secondary: #007bff;     /* Bright Blue for actions */
+    --color-success: #28a745;       /* Green for pass */
+    --color-danger: #dc3545;        /* Red for fail */
+    --color-text-dark: #343a40;
+    --color-background: #f4f6f9;    /* Very light cool gray background */
+    --color-card-bg: #ffffff;
+    --font-family: 'Inter', 'Roboto', sans-serif;
+    --border-radius: 6px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+}
+
+/* === 2. Layout Containers === */
+.quiz-page-wrapper {
+    width: 100%;
+    max-width: 950px; /* Wide container for 10 questions */
+    margin: 20px auto;
+    padding: 1rem;
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-title {
+    color: var(--color-primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* === 3. Question Layout (Mobile-First) === */
+.questions-grid {
+    display: grid;
+    /* Default: Single column for mobile */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.question-group {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-left: 5px solid var(--color-secondary); /* Highlight element */
+    border-radius: var(--border-radius);
+    background-color: #ffffff;
+}
+
+.question-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.answer-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    background-color: white;
+}
+
+.answer-select:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* === 4. Navigation and Submit Buttons === */
+.quiz-navigation-controls {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-direction: column; /* Stack buttons on mobile */
+}
+
+.nav-button,
+.submit-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%;
+}
+
+.nav-button {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.nav-button:hover {
+    background-color: #003657;
+    transform: translateY(-1px);
+}
+
+.submit-button {
+    background-color: var(--color-secondary); /* Highlight submit button */
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+
+/* === 5. Result Display === */
+.test-result-header {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 3rem 0;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.result--pass {
+    color: white;
+    background-color: var(--color-success);
+}
+
+.result--fail {
+    color: white;
+    background-color: var(--color-danger);
+}
+
+
+/* === 6. Media Query for Desktop/Tablet === */
+@media (min-width: 768px) {
+    .quiz-page-wrapper {
+        padding: 2rem 3rem;
+    }
+    
+    .quiz-title {
+        font-size: 2rem;
+    }
+
+    /* Arrange questions in two columns on desktop */
+    .questions-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .quiz-navigation-controls {
+        flex-direction: row; /* Layout buttons side-by-side */
+        justify-content: space-between;
+    }
+    
+    .nav-button, .submit-button {
+        width: auto;
+        min-width: 200px;
+    }
+}

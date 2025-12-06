@@ -1,0 +1,122 @@
+/*
+ * PROFESSIONAL & RESPONSIVE CSS
+ * File: test_menu.css
+ */
+
+/* === 1. CSS Variables and Base Styles === */
+:root {
+    --color-primary: #0069a1;      /* Dark Clinical Blue */
+    --color-secondary: #2196f3;    /* Bright Blue for hover */
+    --color-accent: #ff9800;       /* Amber for the featured test */
+    --color-text: #333333;
+    --color-background: #f8f9fa;   /* Light gray background */
+    --color-card-bg: #ffffff;
+    --font-family: 'Roboto', 'Arial', sans-serif;
+    --border-radius: 8px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+}
+
+/* === 2. Layout Structure (Mobile-First) === */
+.menu-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.menu-card {
+    width: 100%;
+    max-width: 650px; /* Optimal width for menu content */
+    background-color: var(--color-card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* === 3. Typography and Header === */
+.menu-header {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 1rem;
+}
+
+/* === 4. Button Grid Layout === */
+.test-btn-group {
+    display: grid;
+    /* Default: Stacked single column for excellent mobile usability */
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.test-button {
+    padding: 1rem 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.test-button:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 105, 161, 0.3);
+}
+
+.test-button:active {
+    transform: translateY(0);
+}
+
+/* Featured Button Style (Full Test) */
+.test-button.button--featured {
+    background-color: var(--color-accent);
+    color: var(--color-text); /* Use dark text for contrast on bright button */
+    font-size: 1.15rem;
+    padding: 1.2rem 1rem;
+    font-weight: 700;
+    border: 2px solid var(--color-primary);
+}
+
+.test-button.button--featured:hover {
+    background-color: #ffb74d;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.5);
+}
+
+
+/* === 5. Responsive Design (Desktop/Tablet Optimization) === */
+@media (min-width: 500px) {
+    /* Tablet/Small Desktop: Two-column grid for better use of space */
+    .test-btn-group {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Make the Full Test button span two columns for clear emphasis */
+    .test-button.button--featured {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-card {
+        padding: 3rem;
+    }
+    .menu-header {
+        font-size: 2.2rem;
+    }
+}

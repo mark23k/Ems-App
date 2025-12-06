@@ -1,0 +1,381 @@
+/*
+ * PROFESSIONAL & RESPONSIVE CSS
+ * File: test_quiz.css
+ */
+
+/* === 1. CSS Variables and Base Styles === */
+:root {
+    --color-primary: #0069a1;       /* Dark Clinical Blue */
+    --color-secondary: #007bff;     /* Blue for actions/highlights */
+    --color-success: #28a745;       /* Green for pass/correct */
+    --color-danger: #dc3545;        /* Red for fail/errors */
+    --color-text-dark: #343a40;
+    --color-background: #f8f9fa;    /* Light gray page background */
+    --color-card-bg: #ffffff;
+    --font-family: 'Roboto', 'Arial', sans-serif;
+    --border-radius: 8px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+}
+
+/* === 2. Layout Containers === */
+.test-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Start content from the top */
+    min-height: 100vh;
+    padding: 20px 10px; 
+}
+
+.test-content-card {
+    width: 100%;
+    max-width: 850px; /* Wider area for questions */
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+/* === 3. Header and Typography === */
+.test-header {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #e0e0e0;
+    text-align: center;
+}
+
+/* === 4. Form and Question Styling (Mobile-First) === */
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between question groups */
+}
+
+.question-group {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-left: 5px solid var(--color-primary); /* Emphasize the question boundary */
+    border-radius: var(--border-radius);
+    background-color: #f8f9fa;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.question-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.answer-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    background-color: white;
+}
+
+.answer-select:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* === 5. Buttons === */
+.submit-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 1rem;
+    width: 100%;
+    background-color: var(--color-secondary); /* Blue submit button */
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3);
+}
+
+.next-test-controls {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.next-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block; 
+}
+
+.next-btn:hover {
+    background-color: #004c7a;
+}
+
+/* === 6. Result Display === */
+.result-mark {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.result-mark--pass {
+    color: white;
+    background-color: var(--color-success);
+}
+
+.result-mark--fail {
+    color: white;
+    background-color: var(--color-danger);
+}
+
+/* === 7. Media Query for Desktop/Tablet === */
+@media (min-width: 768px) {
+    .test-content-card {
+        padding: 3rem;
+    }
+    
+    .test-header {
+        font-size: 2.2rem;
+    }
+
+    /* Use CSS Grid to arrange questions in two columns */
+    .quiz-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .question-group {
+        /* Each question takes up one column */
+        grid-column: span 1;
+    }
+    
+    .submit-btn {
+        /* Make the submit button span both columns and center it */
+        grid-column: 1 / -1; 
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}/*
+ * PROFESSIONAL & RESPONSIVE CSS
+ * File: test_quiz.css
+ */
+
+/* === 1. CSS Variables and Base Styles === */
+:root {
+    --color-primary: #0069a1;       /* Dark Clinical Blue */
+    --color-secondary: #007bff;     /* Blue for actions/highlights */
+    --color-success: #28a745;       /* Green for pass/correct */
+    --color-danger: #dc3545;        /* Red for fail/errors */
+    --color-text-dark: #343a40;
+    --color-background: #f8f9fa;    /* Light gray page background */
+    --color-card-bg: #ffffff;
+    --font-family: 'Roboto', 'Arial', sans-serif;
+    --border-radius: 8px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+}
+
+/* === 2. Layout Containers === */
+.test-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Start content from the top */
+    min-height: 100vh;
+    padding: 20px 10px; 
+}
+
+.test-content-card {
+    width: 100%;
+    max-width: 850px; /* Wider area for questions */
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+/* === 3. Header and Typography === */
+.test-header {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #e0e0e0;
+    text-align: center;
+}
+
+/* === 4. Form and Question Styling (Mobile-First) === */
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between question groups */
+}
+
+.question-group {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-left: 5px solid var(--color-primary); /* Emphasize the question boundary */
+    border-radius: var(--border-radius);
+    background-color: #f8f9fa;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.question-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.answer-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    background-color: white;
+}
+
+.answer-select:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* === 5. Buttons === */
+.submit-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 1rem;
+    width: 100%;
+    background-color: var(--color-secondary); /* Blue submit button */
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3);
+}
+
+.next-test-controls {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.next-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block; 
+}
+
+.next-btn:hover {
+    background-color: #004c7a;
+}
+
+/* === 6. Result Display === */
+.result-mark {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.result-mark--pass {
+    color: white;
+    background-color: var(--color-success);
+}
+
+.result-mark--fail {
+    color: white;
+    background-color: var(--color-danger);
+}
+
+/* === 7. Media Query for Desktop/Tablet === */
+@media (min-width: 768px) {
+    .test-content-card {
+        padding: 3rem;
+    }
+    
+    .test-header {
+        font-size: 2.2rem;
+    }
+
+    /* Use CSS Grid to arrange questions in two columns */
+    .quiz-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .question-group {
+        /* Each question takes up one column */
+        grid-column: span 1;
+    }
+    
+    .submit-btn {
+        /* Make the submit button span both columns and center it */
+        grid-column: 1 / -1; 
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

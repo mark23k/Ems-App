@@ -1,0 +1,304 @@
+/*
+ * PROFESSIONAL & RESPONSIVE CSS
+ * File: diagnosis.css
+ */
+
+/* === 1. CSS Variables and Base Styles === */
+:root {
+    --color-primary: #007bff; /* Professional Blue */
+    --color-secondary: #6c757d; /* Gray */
+    --color-success: #28a745; /* Green for diagnosis result */
+    --color-background: #f8f9fa; /* Light Gray Background */
+    --color-card-bg: #ffffff; /* White card background */
+    --color-border: #dee2e6;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --padding-base: 1.5rem;
+    --border-radius: 0.5rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: #343a40;
+}
+
+/* === 2. Layout Structure (assessment-page) === */
+.assessment-page {
+    display: flex;
+    justify-content: center;
+    padding: var(--padding-base) 0;
+    min-height: 100vh;
+}
+
+.assessment-container {
+    width: 100%;
+    max-width: 900px; /* Max width for desktop professional feel */
+    margin: 0 1rem;
+    background-color: var(--color-card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.assessment-header {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 0.5rem;
+}
+
+/* === 3. Form Sections and Grouping === */
+.assessment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between major sections */
+}
+
+.form-section {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: #f8f9fa; /* Slightly off-white for sections */
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--color-border);
+}
+
+/* Use Grid for Field Layout within sections */
+.form-section > .input-group:not(.full-width) {
+    /* If the section has fields, use a grid layout */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.group-fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+
+/* Input Group Styling */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+select {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-card-bg);
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none; /* Remove default arrow on select */
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%20146.2c0%204.6-1.5%208.7-4.4%2012.6-3.8%205.1-13%2012.7-25.2%2022.6-18.2%2014.8-40.7%2031.5-66.8%2048.9-38.6%2026.2-76.3%2050.4-114.3%2074.6-2.5%201.5-5.3%202.2-8.1%202.2-2.9%200-5.7-.8-8.1-2.2-38-24.2-75.7-48.4-114.3-74.6-26.1-17.4-48.6-34.1-66.8-48.9-12.2-9.9-21.4-17.5-25.2-22.6-2.9-3.9-4.4-8-4.4-12.6%200-11.4%209.2-20.6%2020.6-20.6h251.2c11.4%200%2020.6%209.2%2020.6%2020.6z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.6rem;
+}
+
+select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* === 4. Checklist Dropdowns (Symptoms & History) === */
+
+.checklist-toggle-button {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checklist-toggle-button:hover {
+    background-color: #0056b3;
+}
+
+.selected-items {
+    font-weight: normal;
+    font-style: italic;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.checklist-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-top: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    padding: 0 1rem;
+}
+
+.checklist-content.open {
+    max-height: 1000px; /* Arbitrarily large value for smooth transition */
+    padding: 1rem;
+    transition: max-height 0.5s ease-in, padding 0.5s ease-in;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem 1rem;
+    padding-bottom: 1rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    white-space: nowrap;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: var(--color-primary);
+}
+
+.history-group {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-left: 3px solid var(--color-secondary);
+}
+
+.history-group-title {
+    font-size: 1rem;
+    color: var(--color-secondary);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.checklist-hide-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    float: right;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* === 5. Submission and Result === */
+.submit-button {
+    padding: 1rem;
+    background-color: var(--color-success);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.submit-button:hover {
+    background-color: #1e7e34;
+    transform: translateY(-2px);
+}
+
+.diagnosis-result-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 2px solid var(--color-success);
+    background-color: #e2f3e7; /* Light green background */
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.result-title {
+    color: var(--color-success);
+    font-size: 1.25rem;
+    margin-top: 0;
+}
+
+.result-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #343a40;
+}
+
+
+/* === 6. Responsive Design (Mobile Optimization) === */
+@media (min-width: 600px) {
+    .assessment-container {
+        padding: 2rem;
+    }
+
+    /* Primary Complaint, Neuro, General Findings sections get a two-column grid */
+    .primary-complaint-section > .input-group:not(.full-width),
+    .neuro-metabolic-section > .group-fields,
+    .general-findings-section > .input-group:not(.full-width) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Complaint-specific and Pain sections get up to 3 columns where needed */
+    .obgyn-section,
+    .pain-details {
+        grid-template-columns: 1fr 1fr; /* Default 2 columns */
+    }
+
+    /* Vitals sections for all ages get a three-column grid */
+    .age-vitals {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .age-vitals .full-width {
+        grid-column: span 3;
+    }
+
+    .pain-details .full-width {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 900px) {
+    .obgyn-section {
+        grid-template-columns: 1fr 1fr 1fr; /* Use 3 columns on large screens */
+    }
+}
