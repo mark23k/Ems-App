@@ -172,10 +172,13 @@ select:focus {
 }
 
 .checklist-content.open {
-    max-height: 1000px; /* Arbitrarily large value for smooth transition */
+    max-height: 500px; /* Adjust to desired visible height */
+    overflow-y: auto; /* <-- enable scrolling */
     padding: 1rem;
     transition: max-height 0.5s ease-in, padding 0.5s ease-in;
 }
+
+
 
 .checkbox-grid {
     display: grid;
