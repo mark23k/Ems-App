@@ -151,13 +151,20 @@ select:focus {
     background-color: #0056b3;
 }
 
+
 .selected-items {
     font-weight: normal;
     font-style: italic;
-    max-width: 60%;
+    flex-grow: 1; /* Allows it to take up available space */
+    max-width: 60%; 
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    /* Remove white-space: nowrap; to allow text wrapping */
+    white-space: normal; 
+    text-overflow: ellipsis; /* Still useful for very long single words */
+    max-height: 2.5rem; /* Set a max height to limit the text area to about two lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines for a clean summary */
+    -webkit-box-orient: vertical;  
 }
 
 .checklist-content {
