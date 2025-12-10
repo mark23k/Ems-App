@@ -639,7 +639,7 @@ return (
                                 <label className="checkbox-item"><input type="checkbox" value="numbness" onChange={handleCheckSym}/>Numbness / Tingling</label>
                                 <label className="checkbox-item"><input type="checkbox" value="loss_balance" onChange={handleCheckSym}/>Loss of Balance</label>
                                 <label className="checkbox-item"><input type="checkbox" value="throat_tightness" onChange={handleCheckSym}/>Throat Tightness</label>
-                                <label className="checkbox-item"><input type="checkbox" value="hives" onChange={handleCheckSym}/>Itching / Hives</label>
+                                <label className="checkbox-item"><input type="checkbox" value="hives" onChange={handleCheckSym}/>Itching / Hives / rash</label>
                                 <label className="checkbox-item"><input type="checkbox" value="constipation"onChange={handleCheckSym} />Constipation</label>
                                 <label className="checkbox-item"><input type="checkbox" value="dizziness"onChange={handleCheckSym} />Dizziness</label>
                                 <label className="checkbox-item"><input type="checkbox" value="cough" onChange={handleCheckSym}/>Cough</label>
@@ -648,9 +648,12 @@ return (
                                 <label className="checkbox-item"><input type="checkbox" value="congestion" onChange={handleCheckSym}/>Congestion</label>
                                 <label className="checkbox-item"><input type="checkbox" value="sore_throat" onChange={handleCheckSym}/>Sore Throat</label>
                                 <label className="checkbox-item"><input type="checkbox" value="sweating" onChange={handleCheckSym}/>Sweating</label>
-                                <label className="checkbox-item"><input type="checkbox" value="paroxysmal_nocturnal_dyspnea" onChange={handleCheckSym}/>PND</label>
+                                <label className="checkbox-item"><input type="checkbox" value="paroxysmal_nocturnal_dyspnea" onChange={handleCheckSym}/>paroxysmal nocturnal dyspnea</label>
                                 <label className="checkbox-item"><input type="checkbox" value="seizures" onChange={handleCheckSym}/>Seizures</label>
+                                <label className="checkbox-item"><input type="checkbox" value="neck_stiffness" onChange={handleCheckSym}/>Neck Stiffness</label>
+                                <label className="checkbox-item"><input type="checkbox" value="legs_pain" onChange={handleCheckSym}/>Legs Pain</label>
                                 <label className="checkbox-item"><input type="checkbox" value="fever" onChange={handleCheckSym} />Fever</label>
+                                <label className="checkbox-item"><input type="checkbox" value="photophobia" onChange={handleCheckSym}/>Photophobia (sensitive to light)</label>
                                 <label className="checkbox-item"><input type="checkbox" value="fatigue" onChange={handleCheckSym}/>Fatigue</label>
                                 <label className="checkbox-item"><input type="checkbox" value="chest_tightness" onChange={handleCheckSym}/>Chest Tightness</label>
                                 <label className="checkbox-item"><input type="checkbox" value="blurred_vision" onChange={handleCheckSym}/>Blurred Vision</label>
@@ -702,7 +705,7 @@ return (
                                     <label className="checkbox-item"><input type="checkbox" value="dementia" onChange={handleCheckHis}/>Dementia / Alzheimer’s</label>
                                     <label className="checkbox-item"><input type="checkbox" value="parkinsons_disease" onChange={handleCheckHis}/>Parkinson’s</label>
                                     <label className="checkbox-item"><input type="checkbox" value="multiple_sclerosis"onChange={handleCheckHis} />Multiple Sclerosis (MS)</label>
-                                    <label className="checkbox-item"><input type="checkbox" value="traumatic_brain_injury"onChange={handleCheckHis} />TBI</label>
+                                    <label className="checkbox-item"><input type="checkbox" value="traumatic_brain_injury"onChange={handleCheckHis} />Traumatic Brain Injury</label>
                                 </div>
                             </div>
                             {/* Respiratory */}
@@ -716,6 +719,9 @@ return (
                                     <label className="checkbox-item"><input type="checkbox" value="sleep_apnea"onChange={handleCheckHis} />Sleep Apnea</label>
                                     <label className="checkbox-item"><input type="checkbox" value="croup"onChange={handleCheckHis} />Croup</label>
                                     <label className="checkbox-item"><input type="checkbox" value="recent_viral_illness"onChange={handleCheckHis} />Recent Viral Illness</label>
+                                    <label className="checkbox-item"><input type="checkbox" value="recent_infection"onChange={handleCheckHis} />Recent Infection</label>
+                                    <label className="checkbox-item"><input type="checkbox" value="ear_infection"onChange={handleCheckHis} />Ear Infection</label>
+                                    <label className="checkbox-item"><input type="checkbox" value="immune_compromised"onChange={handleCheckHis} />Immune Compomised</label>
                                 </div>
                             </div>
                             {/* Endocrine / Metabolic */}

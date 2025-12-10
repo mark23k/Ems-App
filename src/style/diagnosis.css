@@ -305,3 +305,8 @@ select:focus {
         grid-template-columns: 1fr 1fr 1fr; /* Use 3 columns on large screens */
     }
 }
+@media (max-height: 700px) {
+    .checklist-content.open {
+        max-height: 60vh; /* Scrollable and responsive for smaller screens */
+    }
+}

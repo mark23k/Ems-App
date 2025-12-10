@@ -31,6 +31,7 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
         diverticulitis: 0,
         diverticulosis: 0,
         renalColic: 0,
+        meningitis: 0,
         cholecystitis: 0,
         utiPyelonephritis: 0,
         sepsis: 0,
@@ -264,6 +265,58 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (betterWorse === "no") score.stroke += 1;
     if (radiate === "no") score.stroke += 1;
     if (painStay === "yes" || painStay === "no" ) score.stroke += 1;
+
+
+    // Meningitis
+    if (complaint === "fever" || complaint === "head_ache" || complaint === "altered_mental_status") score.meningitis += 5;
+    if (pulse === "high" || pulse === "normal") score.meningitis += 1;
+    if (toddlerPulse === "normal" || toddlerPulse === "high") score.meningitis += 1;
+    if (schoolPulse === "normal" || schoolPulse === "high")score.meningitis +=1
+    if (preschoolPulse === "normal" || preschoolPulse === "high") score.meningitis += 1;
+    if (infantPulse === "normal" || infantPulse === "high") score.meningitis += 1;
+    if (schoolRespiratoryRate === "normal" || schoolRespiratoryRate === "high" ) score.meningitis += 1;
+    if (toddlerRespiratoryRate === "high" || toddlerRespiratoryRate === "normal" ) score.meningitis += 1;
+    if (preschoolRespiratoryRate === "high" || preschoolRespiratoryRate === "normal" ) score.meningitis += 1;
+    if (infantRespiratoryRate === "high" || infantRespiratoryRate === "normal" ) score.meningitis += 1;
+    if (toddlerBloodPressure === "normal" || toddlerBloodPressure === "slight-high" || toddlerBloodPressure === "low-1") score.meningitis += 1;
+    if (preschoolBloodPressure === "normal" || preschoolBloodPressure === "normal1" || preschoolBloodPressure === "slight-high") score.meningitis += 1;
+    if (infantBloodPressure === "normal" || infantBloodPressure === "slight-high") score.meningitis += 1;
+    if (schoolBloodPressure === "normal" || schoolBloodPressure === "normal1" || schoolBloodPressure === "slight-high") score.meningitis += 1
+    if (breathing === "yes" || breathing === "no") score.meningitis += 1;
+    if (respiratoryRate === "high" || respiratoryRate === "normal") score.meningitis += 1;
+    if (bloodPressure === "normal" || bloodPressure === "slight-high" || bloodPressure === "normal1") score.meningitis += 1;
+    if (pulsusParadoxus === "no") score.meningitis += 1;
+    if (spo2 === "normal" || spo2 === "low") score.meningitis += 1;
+    if (bgl === "normal") score.meningitis += 1;
+    if (skin === "normal" || skin === "pale") score.meningitis += 1;
+    if (finding === "normal") score.meningitis += 1;
+
+    if (
+        symptoms.includes("fever") ||
+        symptoms.includes("headache") ||
+        symptoms.includes("neck_stiffness") ||
+        symptoms.includes("photophobia") ||
+        symptoms.includes("nausea") ||
+        symptoms.includes("vomiting") ||
+        symptoms.includes("hives") ||
+        symptoms.includes("confusion") ||
+        symptoms.includes("legs_pain")
+    ) score.meningitis += 1;
+
+    if (onset === "gradual" || onset === "sudden") score.meningitis += 1;
+
+    if (
+        history.includes("recent_viral_illness") ||
+        history.includes("immune_compromised") ||
+        history.includes("recent_infection") ||
+        history.includes("ear_infection")
+    ) score.meningitis += 1;
+
+    if (isPain === "yes" || isPain === "no") score.meningitis += 1;
+    if (betterWorse === "no" || betterWorse === "lying_better") score.meningitis += 1;
+    if (radiate === "no") score.meningitis += 1;
+    if (painStay === "yes" || painStay === "no") score.meningitis += 1;
+
 
     // COPD
     if (complaint === "difficulty_breathing") score.copd += 5;
