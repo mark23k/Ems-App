@@ -246,7 +246,7 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (pulsusParadoxus === "no") score.stroke += 1;
     if (spo2 === "normal") score.stroke += 1;
     if (bgl === "normal" || bgl === "high") score.stroke += 1;
-    if (strokeScale === "positive") score.stroke += 1;
+    if (strokeScale === "positive") score.stroke += 5;
     if (skin === "normal" || skin === "flushed") score.stroke += 1;
     if (finding === "normal") score.stroke += 1;
     if (
@@ -257,7 +257,8 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
         symptoms.includes("dizziness") || 
         symptoms.includes("confusion") || 
         symptoms.includes("blurred_vision") || 
-        symptoms.includes("headache")
+        symptoms.includes("headache") ||
+        symptoms.includes("photophobia")
     ) score.stroke += 1;
     if (onset === "sudden") score.stroke += 1;
     if (history.includes("hypertension") || history.includes("stroke") || history.includes("diabetes") || history.includes("high_cholesterol") || history.includes("")) score.stroke += 1;
@@ -271,7 +272,7 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (complaint === "fever" || complaint === "head_ache" || complaint === "altered_mental_status") score.meningitis += 5;
     if (pulse === "high" || pulse === "normal") score.meningitis += 1;
     if (toddlerPulse === "normal" || toddlerPulse === "high") score.meningitis += 1;
-    if (schoolPulse === "normal" || schoolPulse === "high")score.meningitis +=1
+    if (schoolPulse === "normal" || schoolPulse === "high")score.meningitis +=1;
     if (preschoolPulse === "normal" || preschoolPulse === "high") score.meningitis += 1;
     if (infantPulse === "normal" || infantPulse === "high") score.meningitis += 1;
     if (schoolRespiratoryRate === "normal" || schoolRespiratoryRate === "high" ) score.meningitis += 1;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FullData } from './test_data';
 import '../style/full_test.css'; // Link to the new CSS file
 
@@ -15,12 +15,17 @@ export default function FullTest() {
 
     const currentQuestions = FullData.slice(start, end);   // Only this page's questions
 
+    useEffect(() => {
+    window.scrollTo(0, 0);
+    }, [page]); // This triggers every time the page number changes
+
     function handleChange(index, value) {
         setAnswer((prev) => ({
             ...prev,
             [index]: value
         }));
     }
+
 
     // Grade using ALL QUESTIONS, not just current page
     function Grade() {
