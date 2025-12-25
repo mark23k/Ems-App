@@ -139,12 +139,12 @@ function AllStudy() {
           </div>
         </section>
 
-        <section className="treatment-section">
+        <section className="finding-section">
           <div className="section-header">
             <span className="icon">🚑</span>
             <h2>EMT Findings</h2>
           </div>
-          <div className="card treat-card">
+          <div className="card find-card">
             <p>{data.findings}</p>
           </div>
         </section>

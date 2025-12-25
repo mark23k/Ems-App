@@ -110,6 +110,30 @@
     }
 }
 
+/* Styling for the new EMT Findings section */
+.find-card {
+    border-left-color: #f1c40f; /* Amber/Yellow for clinical findings */
+    background: #fffdf5; /* Very subtle warm tint to distinguish it from pure white cards */
+}
+
+/* Optional: Add a subtle pulse to the findings icon to make it draw the eye */
+.finding-section .icon {
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* If you want to bold the specific signs (like "Beck's Triad" or "JVD") 
+   inside the data.findings paragraph */
+.find-card p strong {
+    color: var(--navy-blue);
+    font-weight: 700;
+}
+
+/* Ensure spacing is consistent with other sections */
+.finding-section {
+    margin-bottom: 20px;
+}
+
 /* ===========================
    LOADING & TRANSITION STATES
    =========================== */
