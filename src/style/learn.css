@@ -1,0 +1,133 @@
+:root {
+    --bg-main: #f0f2f5;
+    --text-dark: #1e272e;
+    --card-white: #ffffff;
+    /* Category Colors */
+    --resp-color: #27ae60;
+    --cardiac-color: #c0392b;
+    --abd-color: #2980b9;
+    --ob-color: #8e44ad;
+    --burn-color: #e67e22;
+    --ams-color: #34495e;
+    --trauma-color: #d63031;
+}
+
+.main-menu-container {
+    min-height: 100vh;
+    background-color: var(--bg-main);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.main-menu-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.star-of-life {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.main-subtitle {
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* Menu Grid */
+.menu-grid {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* The Hub Card */
+.hub-card {
+    background: var(--card-white);
+    border: none;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    border-left: 8px solid #ccc;
+}
+
+.hub-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.hub-card:active {
+    transform: scale(0.98);
+}
+
+/* Icon Section */
+.hub-icon {
+    font-size: 2rem;
+    margin-right: 20px;
+    background: #f8f9fa;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+/* Text Section */
+.hub-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.hub-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.hub-desc {
+    font-size: 0.85rem;
+    color: #95a5a6;
+    margin-top: 2px;
+}
+
+/* Category Border Colors */
+.hub-card.respiratory { border-left-color: var(--resp-color); }
+.hub-card.cardiac { border-left-color: var(--cardiac-color); }
+.hub-card.abdominal { border-left-color: var(--abd-color); }
+.hub-card.obgyn { border-left-color: var(--ob-color); }
+.hub-card.burns { border-left-color: var(--burn-color); }
+.hub-card.ams { border-left-color: var(--ams-color); }
+.hub-card.trauma { border-left-color: var(--trauma-color); }
+
+.main-menu-footer {
+    margin-top: 50px;
+    color: #bdc3c7;
+    font-size: 0.9rem;
+}
+
+/* Desktop Grid View */
+@media (min-width: 768px) {
+    .menu-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 900px;
+    }
+}

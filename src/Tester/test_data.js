@@ -244,13 +244,4 @@ export const FullData = [
     {id: 100, question: "Which is a sign of respiratory fatigue?", answer1: "Use of accessory muscles", answer2: "Normal respiratory rate", answer3: "Slight cough", answer4: "Mild wheeze", correct: "Use of accessory muscles"}
         
 
-
-
-
-
-
-
-
-
-
 ]

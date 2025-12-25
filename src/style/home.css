@@ -1,115 +1,126 @@
-/* =============================
-   Home Page - Professional UI
-   ============================= */
-
-/* Page Background */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #0d47a1, #1976d2);
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --text-dark: #2c3e50;
 }
 
-/* Wrapper centers everything */
 .home-wrapper {
-  width: 100%;
-  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #1a2a6c, #b21f1f, #fdbb2d); /* EMT Sunset Gradient */
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Frosted Glass Card */
-.home-card {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px);
-  padding: 45px 55px;
-  border-radius: 22px;
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.home-content {
   width: 100%;
-  max-width: 430px;
+  max-width: 450px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 0.7s ease-in-out;
 }
 
-/* Title */
+.home-header {
+  margin-bottom: 40px;
+  color: white;
+}
+
+.logo-icon {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+
 .home-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 35px;
-  letter-spacing: 1px;
-  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin: 0;
 }
 
-/* Button container */
-.home-buttons {
+.home-tagline {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* Button Grid */
+.home-buttons-grid {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
-/* Shared Button Styling */
-.btn {
-  width: 100%;
-  padding: 15px 0;
+.home-btn {
+  background: var(--glass-bg);
   border: none;
-  border-radius: 14px;
-  font-size: 1.25rem;
-  font-weight: 600;
+  padding: 20px 25px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  text-align: left;
+  width: 100%;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+.home-btn:hover {
+  transform: translateY(-5px);
+  background: white;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
-/* Individual Button Colors */
-.btn-learn {
-  background: #4caf50;
-  color: #fff;
+.home-btn:active {
+  transform: scale(0.95);
 }
 
-.btn-test {
-  background: #ff9800;
-  color: #fff;
+.btn-icon {
+  font-size: 2.2rem;
+  margin-right: 20px;
 }
 
-.btn-diagnosis {
-  background: #e53935;
-  color: #fff;
+.btn-info {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Mobile Responsive */
-@media (max-width: 500px) {
-  .home-card {
-    padding: 35px 28px;
-    max-width: 92%;
-  }
-
-  .home-title {
-    font-size: 2rem;
-  }
-
-  .btn {
-    font-size: 1.1rem;
-  }
+.btn-label {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-dark);
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.btn-sub {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 2px;
+}
+
+/* Button Specific Accents */
+.home-btn.learn { border-left: 6px solid var(--secondary-color); }
+.home-btn.test { border-left: 6px solid var(--primary-color); }
+.home-btn.diagnosis { border-left: 6px solid var(--danger-color); }
+
+.home-footer {
+  margin-top: 50px;
+  color: white;
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 400px) {
+  .home-title { font-size: 2.2rem; }
+  .home-btn { padding: 15px 20px; }
 }
