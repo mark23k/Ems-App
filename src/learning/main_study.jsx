@@ -15,11 +15,11 @@ function AllStudy() {
     // resp
     "/learn/respiratory/asthma": RespData.find(item => item.name === "Asthma"),
     "/learn/respiratory/anaphylaxis": RespData.find(item => item.name === "Anaphylaxis"),
-    "/learn/respiratory/copd": RespData.find(item => item.name === "Copd"),
+    "/learn/respiratory/pe": RespData.find(item => item.name === "Pulmonary Embolism (PE)"),
     "/learn/respiratory/croup": RespData.find(item => item.name === "Croup"),
-    "/learn/respiratory/bronchitis": RespData.find(item => item.name === "Bronchitis"),
+    "/learn/respiratory/bronchitis": RespData.find(item => item.name === "Chronic Bronchitis (COPD)"),
     "/learn/respiratory/pneumonia": RespData.find(item => item.name === "Pneumonia"),
-    "/learn/respiratory/emphysema": RespData.find(item => item.name === "Emphysema"),
+    "/learn/respiratory/emphysema": RespData.find(item => item.name === "Emphysema (COPD)"),
     //obgyn
     "/learn/obgyn/normal-birth": ObgynData.find(item => item.name === "Normal Childbirth (Imminent Delivery)"),
     "/learn/obgyn/eclampsia": ObgynData.find(item => item.name === "Preeclampsia & Eclampsia"),
@@ -136,6 +136,16 @@ function AllStudy() {
           </div>
           <div className="card info-card">
             <p>{data.info}</p>
+          </div>
+        </section>
+
+        <section className="treatment-section">
+          <div className="section-header">
+            <span className="icon">🚑</span>
+            <h2>EMT Findings</h2>
+          </div>
+          <div className="card treat-card">
+            <p>{data.findings}</p>
           </div>
         </section>
 

@@ -24,9 +24,9 @@ function RespiratoryStudy() {
                         <span className="card-text">Anaphylaxis</span>
                     </button>
                     
-                    <button id="copd" className="menu-card" onClick={() => navigate('/learn/respiratory/copd')}>
+                    <button id="copd" className="menu-card" onClick={() => navigate('/learn/respiratory/pe')}>
                         <span className="card-icon">🚬</span>
-                        <span className="card-text">COPD</span>
+                        <span className="card-text">Pulmonary Embolism (PE)</span>
                     </button>
                     
                     <button id="croup" className="menu-card" onClick={() => navigate('/learn/respiratory/croup')}>

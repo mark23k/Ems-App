@@ -35,7 +35,7 @@ function App() {
         {/*respiratory Page */}
         <Route path="/learn/respiratory/asthma" element={<AllStudy />} />
         <Route path="/learn/respiratory/anaphylaxis" element={<AllStudy />} />
-        <Route path="/learn/respiratory/copd" element={<AllStudy />} />
+        <Route path="/learn/respiratory/pe" element={<AllStudy />} />
         <Route path="/learn/respiratory/croup" element={<AllStudy />} />
         <Route path="/learn/respiratory/bronchitis" element={<AllStudy />} />
         <Route path="/learn/respiratory/pneumonia" element={<AllStudy />} />
