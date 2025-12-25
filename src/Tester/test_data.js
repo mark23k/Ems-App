@@ -137,6 +137,29 @@ export const AlteredMentalStatusData = [
     {id: 20, question: "Which condition should be suspected in AMS with sudden headache and vomiting?", answer1: "Intracranial hemorrhage", answer2: "Hypoglycemia only", answer3: "Dehydration only", answer4: "Asthma", correct: "Intracranial hemorrhage"}
 ];
 
+export const BurnsData = [
+    {id: 1, question: "Which layer of skin is affected in a superficial (1st degree) burn?", answer1: "Epidermis only", answer2: "Dermis only", answer3: "Subcutaneous layer", answer4: "Muscle and bone", correct: "Epidermis only"},
+    {id: 2, question: "A partial-thickness (2nd degree) burn is characterized by which of the following?", answer1: "Blisters and intense pain", answer2: "Charred skin and no pain", answer3: "Dry, red skin without blisters", answer4: "White, waxy appearance", correct: "Blisters and intense pain"},
+    {id: 3, question: "Which burn classification involves all layers of the skin and often appears charred or leathery?", answer1: "Full-thickness (3rd degree)", answer2: "Superficial", answer3: "Partial-thickness", answer4: "1st degree", correct: "Full-thickness (3rd degree)"},
+    {id: 4, question: "According to the Rule of Nines, what percentage of TBSA is assigned to the entire front torso of an adult?", answer1: "18%", answer2: "9%", answer3: "36%", answer4: "4.5%", correct: "18%"},
+    {id: 5, question: "Which of the following is the highest priority for a patient with facial burns and singed nasal hairs?", answer1: "Airway management", answer2: "Pain control", answer3: "Applying sterile water", answer4: "Estimating burn percentage", correct: "Airway management"},
+    {id: 6, question: "What is the Rule of Nines percentage for an adult's entire single arm?", answer1: "9%", answer2: "18%", answer3: "4.5%", answer4: "1%", correct: "9%"},
+    {id: 7, question: "When treating a dry chemical burn, what should the EMT do first?", answer1: "Brush off the dry chemical", answer2: "Flush with large amounts of water", answer3: "Apply a neutralizing agent", answer4: "Cover with a wet dressing", correct: "Brush off the dry chemical"},
+    {id: 8, question: "What is a major complication specifically associated with circumferential chest burns?", answer1: "Restriction of chest wall expansion", answer2: "Hypoglycemia", answer3: "Increased liver enzymes", answer4: "Spinal cord injury", correct: "Restriction of chest wall expansion"},
+    {id: 9, question: "Which of the following is considered a critical burn for an adult?", answer1: "Full-thickness burns to the hands or feet", answer2: "Superficial burns to the back", answer3: "Partial-thickness burns covering 5% TBSA", answer4: "Sunburn on the shoulders", correct: "Full-thickness burns to the hands or feet"},
+    {id: 10, question: "For an infant, what is the Rule of Nines percentage for the entire head?", answer1: "18%", answer2: "9%", answer3: "14%", answer4: "21%", correct: "18%"},
+    {id: 11, question: "Which type of burn results from contact with hot liquids or steam?", answer1: "Scald burn", answer2: "Flame burn", answer3: "Flash burn", answer4: "Chemical burn", correct: "Scald burn"},
+    {id: 12, question: "When cooling a small (<10% TBSA) thermal burn, what should be used?", answer1: "Room temperature water or saline", answer2: "Ice packs", answer3: "Butter or grease", answer4: "Antibiotic ointment", correct: "Room temperature water or saline"},
+    {id: 13, question: "Why are electrical burns considered particularly dangerous?", answer1: "They cause significant internal damage", answer2: "They are always superficial", answer3: "They do not cause pain", answer4: "They only affect the skin", correct: "They cause significant internal damage"},
+    {id: 14, question: "Which field treatment is appropriate for large (>10% TBSA) thermal burns?", answer1: "Dry sterile dressings", answer2: "Wet soaked blankets", answer3: "Ice water immersion", answer4: "Adhesive bandages", correct: "Dry sterile dressings"},
+    {id: 15, question: "A patient was found in a burning building and has soot around the mouth. What is the most likely internal injury?", answer1: "Inhalation injury", answer2: "Myocardial infarction", answer3: "Hypovolemic shock", answer4: "Abdominal evisceration", correct: "Inhalation injury"},
+    {id: 16, question: "What is the primary reason for applying a dry sterile dressing to a major burn?", answer1: "To prevent infection and hypothermia", answer2: "To stop bleeding", answer3: "To numb the nerves", answer4: "To increase blood pressure", correct: "To prevent infection and hypothermia"},
+    {id: 17, question: "According to the Rule of Nines, the groin/genitalia accounts for what percentage?", answer1: "1%", answer2: "5%", answer3: "9%", answer4: "2%", correct: "1%"},
+    {id: 18, question: "What is the Rule of Nines percentage for an adult's single entire leg?", answer1: "18%", answer2: "9%", answer3: "36%", answer4: "13.5%", correct: "18%"},
+    {id: 19, question: "Which age groups are most at risk for complications from burns?", answer1: "Very young and very old", answer2: "Adolescents", answer3: "Middle-aged adults", answer4: "Athletes", correct: "Very young and very old"},
+    {id: 20, question: "In the case of a liquid chemical splash to the eyes, how long should you irrigate?", answer1: "At least 20 minutes", answer2: "5 minutes", answer3: "Until the patient stops crying", answer4: "1 minute only", correct: "At least 20 minutes"}
+];
+
 export const FullData = [
     {id: 1, question: "Which is the most common cause of altered mental status in adults?", answer1: "Hypoglycemia", answer2: "Head trauma", answer3: "Seizure", answer4: "Stroke", correct: "Hypoglycemia"},
     {id: 2, question: "Which symptom is most concerning in a patient with altered mental status?", answer1: "Confusion and unresponsiveness", answer2: "Mild headache", answer3: "Slight dizziness", answer4: "Nausea only", correct: "Confusion and unresponsiveness"},

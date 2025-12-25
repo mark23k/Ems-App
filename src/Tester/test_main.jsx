@@ -5,7 +5,8 @@ import { CardiacData } from './test_data';
 import { OBGYNData } from './test_data';
 import { TraumaData } from './test_data';
 import { AlteredMentalStatusData } from './test_data';
-import { AbdominalData } from './test_data'
+import { AbdominalData } from './test_data';
+import { BurnsData } from './test_data';
 import '../style/main_test.css'
     
 
@@ -28,6 +29,9 @@ import '../style/main_test.css'
         }
         if (window.location.pathname === "/test/abdominal_test") {
             data = AbdominalData;
+        }
+        if (window.location.pathname === "/test/burns_test") {
+            data = BurnsData;
         }
         if (!data) return <h1>Loading...</h1>;
 
