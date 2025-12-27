@@ -1,196 +1,131 @@
-/*
- * PROFESSIONAL & RESPONSIVE CSS
- * File: full_test.css
- */
-
-/* === 1. CSS Variables and Base Styles === */
 :root {
-    --color-primary: #004c7a;       /* Dark Navy Blue */
-    --color-secondary: #007bff;     /* Bright Blue for actions */
-    --color-success: #28a745;       /* Green for pass */
-    --color-danger: #dc3545;        /* Red for fail */
-    --color-text-dark: #343a40;
-    --color-background: #f4f6f9;    /* Very light cool gray background */
-    --color-card-bg: #ffffff;
-    --font-family: 'Inter', 'Roboto', sans-serif;
-    --border-radius: 6px;
+    --primary: #1a5f7a;
+    --success: #27ae60;
+    --danger: #c0392b;
+    --bg: #f4f7f9;
+    --white: #ffffff;
+    --text: #2c3e50;
 }
 
 body {
+    background-color: var(--bg);
     margin: 0;
-    padding: 0;
-    font-family: var(--font-family);
-    background-color: var(--color-background);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
 }
 
-/* === 2. Layout Containers === */
 .quiz-page-wrapper {
-    width: 100%;
-    max-width: 950px; /* Wide container for 10 questions */
-    margin: 20px auto;
-    padding: 1rem;
-    background-color: var(--color-card-bg);
-    border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    overflow-x: hidden; 
-    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.quiz-title {
-    color: var(--color-primary);
-    font-size: 1.6rem;
-    font-weight: 700;
+/* Header & Progress */
+.test-header {
     text-align: center;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 30px;
 }
 
-/* === 3. Question Layout (Mobile-First) === */
-.questions-grid {
-    display: grid;
-    /* Default: Single column for mobile */
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1rem 0;
+.progress-container {
     width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
+    height: 8px;
+    background: #dcdde1;
+    border-radius: 10px;
+    margin: 15px 0;
+    overflow: hidden;
 }
 
+.progress-bar {
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+/* Question Cards */
 .question-group {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    border: 1px solid #dee2e6;
-    border-left: 5px solid var(--color-secondary); /* Highlight element */
-    border-radius: var(--border-radius);
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .question-label {
-    font-size: 0.95rem;
+    display: block;
     font-weight: 600;
-    color: var(--color-text-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 15px;
     line-height: 1.4;
 }
 
+.q-number {
+    color: var(--primary);
+    margin-right: 5px;
+}
+
 .answer-select {
-    padding: 0.75rem 1rem;
-    border: 1px solid #ced4da;
-    border-radius: var(--border-radius);
-    font-size: 0.95rem;
-    color: var(--color-text-dark);
-    cursor: pointer;
-    background-color: white;
-    width: 100%;             /* Force it to stay inside the parent */
-    max-width: 100%;         /* Ensure it never grows larger than the parent */
-    box-sizing: border-box;  /* Includes padding in the width calculation */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Adds ... if text is too long */
-}
-
-.answer-select:focus {
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    outline: none;
-}
-
-/* === 4. Navigation and Submit Buttons === */
-.quiz-navigation-controls {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e0e0e0;
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-direction: column; /* Stack buttons on mobile */
-}
-
-.nav-button,
-.submit-button {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
     width: 100%;
+    padding: 12px;
+    border: 2px solid #edeff2;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-.nav-button {
-    background-color: var(--color-primary);
-    color: white;
+/* Navigation */
+.quiz-navigation-controls {
+    display: flex;
+    gap: 10px;
+    padding: 20px 0;
 }
 
-.nav-button:hover {
-    background-color: #003657;
-    transform: translateY(-1px);
+.nav-button, .submit-button, .retake-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.submit-button {
-    background-color: var(--color-secondary); /* Highlight submit button */
-    color: white;
-}
+.nav-button--next { background: var(--primary); color: white; }
+.nav-button--prev { background: #bdc3c7; color: white; }
+.submit-button { background: var(--success); color: white; }
+.retake-btn { background: var(--primary); color: white; margin-top: 15px; font-size: 1.1rem;}
 
-.submit-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-1px);
-}
-
-
-/* === 5. Result Display === */
-.test-result-header {
+/* Result Screen */
+.result-summary-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin: 3rem 0;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
 }
 
-.result--pass {
-    color: white;
-    background-color: var(--color-success);
+.result--pass { color: var(--success); }
+.result--fail { color: var(--danger); }
+
+/* Review List */
+.review-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 6px solid var(--danger);
 }
 
-.result--fail {
-    color: white;
-    background-color: var(--color-danger);
-}
+.ans-wrong span { color: var(--danger); font-weight: bold; }
+.ans-actual span { color: var(--success); font-weight: bold; }
 
-
-/* === 6. Media Query for Desktop/Tablet === */
-@media (min-width: 768px) {
-    .quiz-page-wrapper {
-        padding: 2rem 3rem;
-    }
-    
-    .quiz-title {
-        font-size: 2rem;
-    }
-
-    /* Arrange questions in two columns on desktop */
-    .questions-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-
+/* Mobile Optimizations */
+@media (max-width: 600px) {
     .quiz-navigation-controls {
-        flex-direction: row; /* Layout buttons side-by-side */
-        justify-content: space-between;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        background: white;
+        padding: 10px;
+        box-shadow: 0 -5px 10px rgba(0,0,0,0.05);
     }
-    
-    .nav-button, .submit-button {
-        width: auto;
-        min-width: 200px;
-    }
+    .quiz-page-wrapper { padding-bottom: 80px; }
 }

@@ -1,126 +1,170 @@
+/* --- Professional EMS Exam Theme --- */
 :root {
-    --test-bg: #f8fafc;
-    --card-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    --primary-blue: #2563eb;
-    --success-green: #10b981;
-    --error-red: #ef4444;
+    --primary-blue: #1a5f7a;
+    --medical-red: #d9534f;
+    --bg-light: #f4f7f6;
+    --text-dark: #2c3e50;
+    --border-grey: #cbd5e0;
+}
+
+body {
+    background-color: var(--bg-light);
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .test-page-wrapper {
-    background-color: var(--test-bg);
-    min-height: 100vh;
-    padding: 20px;
     display: flex;
     justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 .test-content-card {
     background: white;
     width: 100%;
     max-width: 700px;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: var(--card-shadow);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.test-header-section {
+    text-align: center;
+    border-bottom: 2px solid var(--bg-light);
+    margin-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .test-header {
+    color: var(--primary-blue);
     font-size: 1.8rem;
-    color: #1e293b;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-    text-align: center;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.test-subtitle {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-top: 10px;
 }
 
 /* Question Styling */
 .question-group {
     margin-bottom: 25px;
-    padding: 20px;
-    border-radius: 12px;
-    background: #f1f5f9;
-    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .question-label {
-    display: block;
-    font-size: 1.1rem;
     font-weight: 600;
-    color: #334155;
-    margin-bottom: 15px;
+    color: var(--text-dark);
+    margin-bottom: 12px;
     line-height: 1.5;
 }
 
+.q-number {
+    color: var(--primary-blue);
+    margin-right: 8px;
+}
+
 .answer-select {
-    width: 100%;
-    padding: 12px;
+    padding: 12px 15px;
     border-radius: 8px;
-    border: 2px solid #cbd5e1;
-    background-color: white;
+    border: 2px solid var(--border-grey);
+    background-color: #fff;
     font-size: 1rem;
-    color: #1e293b;
-    cursor: pointer;
-    outline: none;
+    color: var(--text-dark);
     transition: border-color 0.2s;
+    cursor: pointer;
 }
 
 .answer-select:focus {
+    outline: none;
     border-color: var(--primary-blue);
 }
 
-/* Buttons */
+/* Button Styling */
 .submit-btn {
     width: 100%;
+    padding: 15px;
     background-color: var(--primary-blue);
     color: white;
     border: none;
-    padding: 15px;
+    border-radius: 8px;
     font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 10px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease;
     margin-top: 20px;
-    transition: opacity 0.2s;
 }
 
 .submit-btn:hover {
-    opacity: 0.9;
+    background-color: #14495e;
 }
 
-.next-btn {
-    background-color: #64748b;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-/* Results Display */
-.result-mark {
+/* Results Section */
+.result-container {
     text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.result-box {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.result-mark {
     font-size: 3rem;
-    margin-top: 30px;
-    padding: 20px;
-    border-radius: 15px;
+    color: var(--primary-blue);
+    margin: 10px 0;
 }
 
-.result-mark--fail {
-    color: var(--error-red);
-    background: #fef2f2;
+.another-btn {
+    padding: 12px 30px;
+    background: transparent;
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-.result-mark--pass {
-    color: var(--success-green);
-    background: #f0fdf4;
+.another-btn:hover {
+    background: var(--primary-blue);
+    color: white;
 }
 
-/* Responsive */
+/* --- Mobile Responsiveness --- */
 @media (max-width: 600px) {
-    .test-content-card {
-        padding: 15px;
+    .test-page-wrapper {
+        padding: 10px;
     }
+
+    .test-content-card {
+        padding: 20px;
+        border-radius: 0; /* Full width feel on mobile */
+    }
+
+    .test-header {
+        font-size: 1.4rem;
+    }
+
     .question-label {
         font-size: 1rem;
     }
+
+    .submit-btn {
+        position: sticky;
+        bottom: 10px;
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

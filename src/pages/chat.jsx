@@ -262,3 +262,140 @@ function Diagnosis() {
     )
 }
 export default Diagnosis
+
+
+
+ { next === "no" &&(
+                    <div className="next-test-controls">
+                        <button className='next next-btn' onClick={() => setNext("yes")}>Another Test</button>
+                    </div>
+                )}
+                
+               {next === "yes"  && (
+                    <>
+                        <form id="quiz-form-2" className="quiz-form" onSubmit={handleSubmit}>
+                            
+                            {/* Question 11 */}
+                            <div className="question-group" id="q-group-11">
+                                <label htmlFor="question11" className="question-label">{data[10].question}</label>
+                                <select id="question11" className="answer-select" value={question11} onChange={(e) => setQuestion11(e.target.value)}>
+                                    <option value="">select</option>
+                                    <option value={data[10].answer1}>{data[10].answer1}</option>
+                                    <option value={data[10].answer2}>{data[10].answer2}</option>
+                                    <option value={data[10].answer3}>{data[10].answer3}</option>
+                                    <option value={data[10].answer4}>{data[10].answer4}</option>
+                                </select>
+                            </div>
+
+                            {/* Question 12 */}
+                            <div className="question-group" id="q-group-12">
+                                <label htmlFor="question12" className="question-label">{data[11].question}</label>
+                                <select id="question12" className="answer-select" value={question12} onChange={(e) => setQuestion12(e.target.value)}>
+                                    <option value="">select</option>
+                                    <option value={data[11].answer1}>{data[11].answer1}</option>
+                                    <option value={data[11].answer2}>{data[11].answer2}</option>
+                                    <option value={data[11].answer3}>{data[11].answer3}</option>
+                                    <option value={data[11].answer4}>{data[11].answer4}</option>
+                                </select>
+                            </div>
+
+                            {/* Question 13 */}
+                            <div className="question-group" id="q-group-13">
+                                <label htmlFor="question13" className="question-label">{data[12].question}</label>
+                                <select id="question13" className="answer-select" value={question13} onChange={(e) => setQuestion13(e.target.value)}>
+                                    <option value="">select</option>
+                                    <option value={data[12].answer1}>{data[12].answer1}</option>
+                                    <option value={data[12].answer2}>{data[12].answer2}</option>
+                                    <option value={data[12].answer3}>{data[12].answer3}</option>
+                                    <option value={data[12].answer4}>{data[12].answer4}</option>
+                                </select>
+                            </div>
+
+                            {/* Question 14 */}
+                            <div className="question-group" id="q-group-14">
+                                <label htmlFor="question14" className="question-label">{data[13].question}</label>
+                                <select id="question14" className="answer-select" value={question14} onChange={(e) => setQuestion14(e.target.value)}>
+                                    <option value="">select</option>
+                                    <option value={data[13].answer1}>{data[13].answer1}</option>
+                                    <option value={data[13].answer2}>{data[13].answer2}</option>
+                                    <option value={data[13].answer3}>{data[13].answer3}</option>
+                                    <option value={data[13].answer4}>{data[13].answer4}</option>
+                                </select>
+                            </div>
+
+                            {/* Question 15 */}
+                            <div className="question-group" id="q-group-15">
+                                <label htmlFor="question15" className="question-label">{data[14].question}</label>
+                                <select id="question15" className="answer-select" value={question15} onChange={(e) => setQuestion15(e.target.value)}>
+                                    <option value="">select</option>
+                                    <option value={data[14].answer1}>{data[14].answer1}</option>
+                                    <option value={data[14].answer2}>{data[14].answer2}</option>
+                                    <option value={data[14].answer3}>{data[14].answer3}</option>
+                                    <option value={data[14].answer4}>{data[14].answer4}</option>
+                                </select>
+                            </div>
+
+                            {/* Question 16 */}
+                            <div className="question-group" id="q-group-16">
+                                <label htmlFor="question16" className="question-label">{data[15].question}</label>
+                                <select id="question16" className="answer-select" value={question16} onChange={(e) => setQuestion16(e.target.value)}>
+                                    <option value="">select</option>
+                                    <option value={data[15].answer1}>{data[15].answer1}</option>
+                                    <option value={data[15].answer2}>{data[15].answer2}</option>
+                                    <option value={data[15].answer3}>{data[15].answer3}</option>
+                                    <option value={data[15].answer4}>{data[15].answer4}</option>
+                                </select>
+                            </div>
+
+                            {/* Question 17 */}
+                            <div className="question-group" id="q-group-17">
+                                <label htmlFor="question17" className="question-label">{data[16].question}</label>
+                                <select id="question17" className="answer-select" value={question17} onChange={(e) => setQuestion17(e.target.value)}>
+                                    <option value="">select</option>
+                                    <option value={data[16].answer1}>{data[16].answer1}</option>
+                                    <option value={data[16].answer2}>{data[16].answer2}</option>
+                                    <option value={data[16].answer3}>{data[16].answer3}</option>
+                                    <option value={data[16].answer4}>{data[16].answer4}</option>
+                                </select>
+                            </div>
+
+                            {/* Question 18 */}
+                            <div className="question-group" id="q-group-18">
+                                <label htmlFor="question18" className="question-label">{data[17].question}</label>
+                                <select id="question18" className="answer-select" value={question18} onChange={(e) => setQuestion18(e.target.value)}>
+                                    <option value="">select</option>
+                                    <option value={data[17].answer1}>{data[17].answer1}</option>
+                                    <option value={data[17].answer2}>{data[17].answer2}</option>
+                                    <option value={data[17].answer3}>{data[17].answer3}</option>
+                                    <option value={data[17].answer4}>{data[17].answer4}</option>
+                                </select>
+                            </div>
+
+                            {/* Question 19 */}
+                            <div className="question-group" id="q-group-19">
+                                <label htmlFor="question19" className="question-label">{data[18].question}</label>
+                                <select id="question19" className="answer-select" value={question19} onChange={(e) => setQuestion19(e.target.value)}>
+                                    <option value="">select</option>
+                                    <option value={data[18].answer1}>{data[18].answer1}</option>
+                                    <option value={data[18].answer2}>{data[18].answer2}</option>
+                                    <option value={data[18].answer3}>{data[18].answer3}</option>
+                                    <option value={data[18].answer4}>{data[18].answer4}</option>
+                                </select>
+                            </div>
+
+                            {/* Question 20 */}
+                            <div className="question-group" id="q-group-20">
+                                <label htmlFor="question20" className="question-label">{data[19].question}</label>
+                                <select id="question20" className="answer-select" value={question20} onChange={(e) => setQuestion20(e.target.value)}>
+                                    <option value="">select</option>
+                                    <option value={data[19].answer1}>{data[19].answer1}</option>
+                                    <option value={data[19].answer2}>{data[19].answer2}</option>
+                                    <option value={data[19].answer3}>{data[19].answer3}</option>
+                                    <option value={data[19].answer4}>{data[19].answer4}</option>
+                                </select>
+                            </div>
+
+                            <button type='submit' className="submit-btn">Submit</button>
+                        </form>
+                    </>
+                )} 

@@ -16,16 +16,7 @@ export const Grade = ({
     if (question8 === data[7].correct) score += 10;
     if (question9 === data[8].correct) score += 10;
     if (question10 === data[9].correct) score += 10;
-    if (question11 === data[10].correct) score += 10;
-    if (question12 === data[11].correct) score += 10;
-    if (question13 === data[12].correct) score += 10;
-    if (question14 === data[13].correct) score += 10;
-    if (question15 === data[14].correct) score += 10;
-    if (question16 === data[15].correct) score += 10;
-    if (question17 === data[16].correct) score += 10;
-    if (question18 === data[17].correct) score += 10;
-    if (question19 === data[18].correct) score += 10;
-    if (question20 === data[19].correct) score += 10;
+
 
     
 
