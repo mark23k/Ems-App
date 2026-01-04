@@ -281,7 +281,7 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
             symptoms.includes("weakness") ||
             symptoms.includes("abd_bloating") ||
             symptoms.includes("shortness_breath")
-        )
+        ) &&
         (
             history.includes("hypertension") ||
             history.includes("copd") ||
@@ -301,7 +301,7 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
 
     // === AAA ===
     if (
-        (complaint === "abdominal_pain") &&
+        (complaint === "abdominal_pain") || (complaint === "tearing_back") &&
         (chestPain === "") &&
         (breathing === "no") &&
         (lung === "") &&

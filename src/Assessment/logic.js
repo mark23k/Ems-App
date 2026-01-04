@@ -18,6 +18,7 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
         Myocardial_Infarction: 0,
         angina: 0,
         asthma: 0,
+        anaphylaxis: 0,
         pulmonaryEdema: 0,
         pulmonaryEmbolism: 0,
         croup: 0,
@@ -121,7 +122,7 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (symptoms.includes("shortness_breath") || symptoms.includes("chest_tightness") || symptoms.includes("anxiety") || symptoms.includes("fatigue")) score.asthma += 1;
     if (radiate === "no") score.asthma += 1;
     if (betterWorse === "exertion_worse") score.asthma += 1;
-    if (history.includes("asthma")) score.asthma += 1;
+    if (history.includes("asthma")) score.asthma += 3;
 
     // Anaphylaxis
     if (complaint === "difficulty_breathing") score.anaphylaxis += 5;
@@ -145,12 +146,13 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
         symptoms.includes("dizziness")
     ) score.anaphylaxis += 1;
     if (radiate === "no") score.anaphylaxis += 1;
-    if (history.includes("allergies") || history.includes("")) score.anaphylaxis += 1;
+    if (history.includes("")) score.anaphylaxis += 1;
+    if (history.includes("allergies")) score.anaphylaxis += 3; 
 
     // Pulmonary Edema
     if (complaint === "difficulty_breathing") score.pulmonaryEdema += 5;
     if (breathing === "yes") score.pulmonaryEdema += 1;
-    if (lung === "crackles") score.pulmonaryEdema += 1;
+    if (lung === "crackles") score.pulmonaryEdema += 2;
     if (pulse === "high") score.pulmonaryEdema += 1;
     if (bloodPressure === "high" || bloodPressure === "slight-high2") score.pulmonaryEdema += 1;
     if (respiratoryRate === "high") score.pulmonaryEdema += 1;
@@ -158,7 +160,8 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (pulsusParadoxus === "no") score.pulmonaryEdema += 1;
     if (skin === "pale" || skin === "cyanotic") score.pulmonaryEdema += 1;
     if (onset === "gradual") score.pulmonaryEdema += 1;
-    if (finding === "jvd" || finding === "swollen_legs" || finding === "pink_sputum") score.pulmonaryEdema += 1;
+    if (finding === "jvd" || finding === "swollen_legs" ) score.pulmonaryEdema += 1;
+    if (finding === "pink_sputum") score.pulmonaryEdema +=2;
     if (
         symptoms.includes("fatigue") || 
         symptoms.includes("chest_tightness") || 
@@ -246,6 +249,7 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (pulsusParadoxus === "no") score.stroke += 1;
     if (spo2 === "normal") score.stroke += 1;
     if (bgl === "normal" || bgl === "high") score.stroke += 1;
+    if (bgl === "low") score.stroke -=20;
     if (strokeScale === "positive") score.stroke += 5;
     if (skin === "normal" || skin === "flushed") score.stroke += 1;
     if (finding === "normal") score.stroke += 1;
@@ -322,6 +326,7 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     // COPD
     if (complaint === "difficulty_breathing") score.copd += 5;
     if (breathing === "yes") score.copd += 1;
+    if (breathing === "no") score.copd -=20;
     if (lung === "wheeze") score.copd += 1;
     if (age === "adult") score.copd += 1;
     if (pulse === "high" || pulse === "normal") score.copd += 1;
@@ -383,11 +388,11 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     // === AAA ===
     if (complaint === "abdominal_pain")score.aaa +=5;
     if (complaint === "tearing_back") score.aaa += 10;
-    if (breathing === "no") score.aaa += 1;
+    if (breathing === "no"|| breathing === "yes") score.aaa += 1;
     if (pulse === "normal" || pulse === "high") score.aaa += 1;
     if (respiratoryRate === "normal" || respiratoryRate === "high") score.aaa += 1;
     if (bloodPressure === "low") score.aaa += 3;
-    if (bloodPressure === "closing-in" || bloodPressure === "low-in") score.aaa += 1;
+    if (bloodPressure === "closing-in" || bloodPressure === "uneven" || bloodPressure === "low-in") score.aaa += 1;
     if (spo2 === "normal") score.aaa += 1;
     if (skin === "normal" || skin === "pale") score.aaa += 1;
     if (onset === "sudden") score.aaa += 1;
@@ -395,6 +400,7 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (quadrant === "lower_left" || quadrant === "lower_right" || quadrant === "lower_middle" || quadrant === "upper_middle") score.aaa += 1;
     if (radiateBack === "yes") score.aaa += 1;
     if (symptoms.includes("dizziness") || symptoms.includes("weakness") || symptoms.includes("nausea") || symptoms.includes("sweating") || symptoms.includes("back_pain")) score.aaa += 1;
+    if (symptoms.includes("tearing_back")) score.aaa += 5;
     if (history.includes("none")) score.aaa += 1;
     if (isPain === "yes") score.aaa += 1;
     if (radiate === "back" || radiate === "low_back" || radiate === "mid_back") score.aaa += 1;
@@ -406,7 +412,19 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (breathing === "no") score.appendicitis += 1;
     if (pulse === "normal" || pulse === "high") score.appendicitis += 1;
     if (respiratoryRate === "normal") score.appendicitis += 1;
-    if (bloodPressure === "normal" || bloodPressure === "slight-low") score.appendicitis += 1;
+    if (bloodPressure === "normal" || bloodPressure === "slight-low" || bloodPressure === "low") score.appendicitis += 1;
+    if (toddlerPulse === "normal" || toddlerPulse === "high") score.meningitis += 1;
+    if (schoolPulse === "normal" || schoolPulse === "high")score.meningitis +=1;
+    if (preschoolPulse === "normal" || preschoolPulse === "high") score.meningitis += 1;
+    if (infantPulse === "normal" || infantPulse === "high") score.meningitis += 1;
+    if (schoolRespiratoryRate === "normal"  ) score.meningitis += 1;
+    if ( toddlerRespiratoryRate === "normal" ) score.meningitis += 1;
+    if (preschoolRespiratoryRate === "normal" ) score.meningitis += 1;
+    if ( infantRespiratoryRate === "normal" ) score.meningitis += 1;
+    if (toddlerBloodPressure === "normal" || toddlerBloodPressure === "low" || toddlerBloodPressure === "low-1") score.meningitis += 1;
+    if (preschoolBloodPressure === "normal" || preschoolBloodPressure === "low1" || preschoolBloodPressure === "low") score.meningitis += 1;
+    if (infantBloodPressure === "normal" || infantBloodPressure === "low") score.meningitis += 1;
+    if (schoolBloodPressure === "normal" || schoolBloodPressure === "low1" || schoolBloodPressure === "low") score.meningitis += 1
     if (spo2 === "normal") score.appendicitis += 1;
     if (skin === "normal" || skin === "pale") score.appendicitis += 1;
     if (onset === "gradual") score.appendicitis += 1;
@@ -588,7 +606,8 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (complaint === "difficulty_breathing" || complaint === "chest_pain") score.tensionPneumo += 5;
     if (chestPain === "" || chestPain === "sharp" || chestPain === "pressure") score.tensionPneumo += 1;
     if (breathing === "yes") score.tensionPneumo += 1;
-    if (lung === "diminished_affected_side") score.tensionPneumo += 1;
+    if (breathing === "no") score.tensionPneumo -= 20;
+    if (lung === "diminished_affected_side") score.tensionPneumo += 3;
     if (pulse === "high") score.tensionPneumo += 1;
     if (respiratoryRate === "high") score.tensionPneumo += 1;
     if (bloodPressure === "low" || bloodPressure === "closing-in") score.tensionPneumo += 1;
@@ -618,7 +637,8 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (radiateBack === "no") score.hypoglycemia += 1;
     if (pulsusParadoxus === "no") score.hypoglycemia += 1;
     if (bgl === "low") score.hypoglycemia += 5;
-    if (strokeScale === "negative") score.hypoglycemia += 1;
+    if (bgl === "high") score.hypoglycemia -= 20;
+    if (strokeScale === "negative" || strokeScale === "positive") score.hypoglycemia += 1;
     if (symptoms.includes("weakness") || symptoms.includes("confusion") || symptoms.includes("sweating") || symptoms.includes("anxiety") || symptoms.includes("dizziness") || symptoms.includes("headache")) score.hypoglycemia += 1;
     if (history.includes("diabetes") || history.includes("hypoglycemia") || history.includes("none")) score.hypoglycemia += 1;
     if (isPain === "no") score.hypoglycemia += 1;
@@ -640,7 +660,8 @@ export const SuspectedDiagnosis = ({complaint, finding, chestPain,  painStay, be
     if (radiateBack === "no") score.hyperglycemiaDkaHhs += 1;
     if (swelling === "") score.hyperglycemiaDkaHhs += 1;
     if (pulsusParadoxus === "no") score.hyperglycemiaDkaHhs += 1;
-    if (bgl === "high" || bgl === "very_high") score.hyperglycemiaDkaHhs += 1;
+    if (bgl === "high" || bgl === "very_high") score.hyperglycemiaDkaHhs += 3;
+    if (bgl === "low") score.hyperglycemiaDkaHhs -= 20;
     if (strokeScale === "negative") score.hyperglycemiaDkaHhs += 1;
     if (symptoms.includes("nausea") || symptoms.includes("vomit") || symptoms.includes("weakness") || symptoms.includes("confusion") || symptoms.includes("abdominal_pain") || symptoms.includes("thirst")) score.hyperglycemiaDkaHhs += 1;
     if (history.includes("diabetes") || history.includes("none")) score.hyperglycemiaDkaHhs += 1;

@@ -638,6 +638,7 @@ return (
                                 <label className="checkbox-item"><input type="checkbox" value="speech_difficulty" onChange={handleCheckSym}/>Speech Difficulty</label>
                                 <label className="checkbox-item"><input type="checkbox" value="numbness" onChange={handleCheckSym}/>Numbness / Tingling</label>
                                 <label className="checkbox-item"><input type="checkbox" value="loss_balance" onChange={handleCheckSym}/>Loss of Balance</label>
+                                <label className="checkbox-item"><input type="checkbox" value="tearing_back" onChange={handleCheckSym}/>Tearing Back Pain</label>
                                 <label className="checkbox-item"><input type="checkbox" value="throat_tightness" onChange={handleCheckSym}/>Throat Tightness</label>
                                 <label className="checkbox-item"><input type="checkbox" value="hives" onChange={handleCheckSym}/>Itching / Hives / rash</label>
                                 <label className="checkbox-item"><input type="checkbox" value="constipation"onChange={handleCheckSym} />Constipation</label>

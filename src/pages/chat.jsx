@@ -399,3 +399,45 @@ export default Diagnosis
                         </form>
                     </>
                 )} 
+
+
+
+
+
+
+
+                Cardiovascular
+{v:'hypertension', l:'Hypertension'}, {v:'coronary_artery_disease', l:'CAD'}, {v:'myocardial_infarction', l:'MI / Heart Attack'}, {v:'congestive_heart_failure', l:'CHF'}, {v:'angina', l:'Angina'}, {v:'atrial_fibrillation', l:'A-fib / Arrhythmia'}, {v:'peripheral_vascular_disease', l:'PVD'}, {v:'cardiac_device', l:'Stents / Pacemaker / AICD'}, {v:'pericarditis', l:'Pericarditis'},
+
+Trauma / Surgery
+{v:'chest_trauma', l:'Chest Trauma'}, {v:'post_cardiac_surgery', l:'Recent Cardiac Surgery'},
+
+Neurological
+{v:'stroke', l:'Stroke (CVA) / TIA'}, {v:'seizure_disorder', l:'Seizure Disorder'}, {v:'dementia', l:'Dementia / Alzheimer’s'}, {v:'parkinsons_disease', l:'Parkinson’s'}, {v:'multiple_sclerosis', l:'Multiple Sclerosis (MS)'}, {v:'traumatic_brain_injury', l:'Traumatic Brain Injury'},
+
+Respiratory
+{v:'copd', l:'COPD'}, {v:'asthma', l:'Asthma'}, {v:'emphysema', l:'Emphysema'}, {v:'chronic_bronchitis', l:'Chronic Bronchitis'}, {v:'sleep_apnea', l:'Sleep Apnea'}, {v:'croup', l:'Croup'}, {v:'recent_viral_illness', l:'Recent Viral Illness'}, {v:'recent_infection', l:'Recent Infection'}, {v:'ear_infection', l:'Ear Infection'}, {v:'immune_compromised', l:'Immune Compomised'},
+
+Endocrine / Metabolic
+{v:'diabetes', l:'Diabetes (Type 1 or 2)'}, {v:'hypoglycemia', l:'Hypoglycemia Episodes'}, {v:'thyroid_disorder', l:'Thyroid Disorder'}, {v:'adrenal_disorder', l:'Adrenal Disorders'}, {v:'high_cholesterol', l:'High Cholesterol'},
+
+Hematologic
+{v:'anemia', l:'Anemia'}, {v:'sickle_cell_disease', l:'Sickle Cell Disease'}, {v:'clotting_disorder', l:'Clotting Disorders'}, {v:'dvt_pe_history', l:'History of DVT/PE'},
+
+Infectious / Immune
+{v:'hiv_aids', l:'HIV / AIDS'}, {v:'hepatitis', l:'Hepatitis'}, {v:'sepsis', l:'Sepsis'}, {v:'autoimmune_disease', l:'Autoimmune Diseases'},
+
+Musculoskeletal
+{v:'osteoarthritis', l:'Osteoarthritis'}, {v:'rheumatoid_arthritis', l:'Rheumatoid Arthritis'}, {v:'osteoporosis', l:'Osteoporosis'}, {v:'chronic_back_pain', l:'Chronic Back Pain'}, {v:'recent_fracture_or_joint_replacement', l:'Recent Fx/Joint Replacement'},
+
+Psychiatric / Behavioral
+{v:'depression', l:'Depression'}, {v:'anxiety', l:'Anxiety'}, {v:'bipolar_disorder', l:'Bipolar Disorder'}, {v:'schizophrenia', l:'Schizophrenia'}, {v:'ptsd', l:'PTSD'}, {v:'substance_use_disorder', l:'Substance Use Disorder'},
+
+Genitourinary / Renal
+{v:'chronic_kidney_disease', l:'CKD'}, {v:'end_stage_renal_disease', l:'ESRD (Dialysis)'}, {v:'kidney_stones', l:'Kidney Stones'}, {v:'urinary_tract_infection', l:'UTI'},
+
+Gastrointestinal
+{v:'gerd', l:'GERD'}, {v:'peptic_ulcer_disease', l:'PUD'}, {v:'crohns_colitis', l:'Crohn’s / Colitis'}, {v:'liver_disease', l:'Liver Disease / Cirrhosis'}, {v:'gallbladder_disease', l:'Gallbladder Disease'},
+
+Other / Miscellaneous
+{v:'cancer', l:'Cancer'}, {v:'allergies', l:'Allergies'}, {v:'recent_surgery', l:'Recent Surgeries'}, {v:'pregnancy_or_childbirth', l:'Pregnancy / Childbirth'}, {v:'immunosuppression', l:'Immunosuppression'}, {v:'birth_control', l:'Birth Control'}, {v:'hormone_replace', l:'Hormone Replacement'}, {v:'long_immobilization', l:'Long Immobilization'}, {v:'smoking', l:'Smoker'},
